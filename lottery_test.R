@@ -58,11 +58,11 @@ final = function(y) {
   } else {next_prob = rep('Non', each = length(last_count))}
   
   results = data.frame(rbind(max_0, max_1, mean, last_count, next_prob), 
-                       row.names = c('³Ìªø³sÄò¥¼¶}¸¹½X¶¡¶Z', '³Ìªø³sÄò¥X²{¸¹½X¶¡¶Z', '¹w´Á¶}¥X¸¹½X¶¡¶Z', '¦Ü¤µ¥¼¶}¥X¸¹½X¶¡¶Z', '¤U´Á¥i¯à¶}¥X¸¹½X¾÷²v'))
-  colnames(results) = sapply(1:length(last_count), function(x) {paste("¸¹½X", x, sep = "")})
+                       row.names = c('æœ€é•·é€£çºŒæœªé–‹è™Ÿç¢¼é–“è·', 'æœ€é•·é€£çºŒå‡ºç¾è™Ÿç¢¼é–“è·', 'é æœŸé–‹å‡ºè™Ÿç¢¼é–“è·', 'è‡³ä»Šæœªé–‹å‡ºè™Ÿç¢¼é–“è·', 'ä¸‹æœŸå¯èƒ½é–‹å‡ºè™Ÿç¢¼æ©Ÿç‡'))
+  colnames(results) = sapply(1:length(last_count), function(x) {paste("è™Ÿç¢¼", x, sep = "")})
   
   return(results)
-} ## ¤@¯ë¸¹½X
+} 
 
 final_s = function(y) {
   
@@ -87,37 +87,10 @@ final_s = function(y) {
   } else {next_prob = rep('Non', each = length(last_count))}
   
   results = data.frame(rbind(max_0, max_1, mean, last_count, next_prob%>%t()), 
-                       row.names = c('³Ìªø³sÄò¥¼¶}¸¹½X¶¡¶Z', '³Ìªø³sÄò¥X²{¸¹½X¶¡¶Z', '¹w´Á¶}¥X¸¹½X¶¡¶Z', '¦Ü¤µ¥¼¶}¥X¸¹½X¶¡¶Z', '¤U´Á¥i¯à¶}¥X¸¹½X¾÷²v'))
-  colnames(results) = sapply(1:length(last_count), function(x) {paste("¸¹½X", x, sep = "")})
+                       row.names = c('æœ€é•·é€£çºŒæœªé–‹è™Ÿç¢¼é–“è·', 'æœ€é•·é€£çºŒå‡ºç¾è™Ÿç¢¼é–“è·', 'é æœŸé–‹å‡ºè™Ÿç¢¼é–“è·', 'è‡³ä»Šæœªé–‹å‡ºè™Ÿç¢¼é–“è·', 'ä¸‹æœŸå¯èƒ½é–‹å‡ºè™Ÿç¢¼æ©Ÿç‡'))
+  colnames(results) = sapply(1:length(last_count), function(x) {paste("è™Ÿç¢¼", x, sep = "")})
   
   return(results)
   
-} ##«Â¤O±m¯S§O¸¹
-
-url = matrix(NA, 4, 2)
-url[1, 1] = 'http://www.lotto-8.com/listltobig.asp' ## ¤j¼Ö³z
-url[2, 1] = 'http://www.lotto-8.com/listlto539.asp' ## ¤µ±m
-url[3, 1] = 'http://www.lotto-8.com/listltodof.asp' ## ¤jºÖ±m
-url[4, 1] = 'http://www.lotto-8.com/listlto.asp' ## «Â¤O±m
-url[1, 2] = 'http://www.lotto-8.com/listltobig.asp?indexpage=2&orderby=new'
-url[2, 2] = 'http://www.lotto-8.com/listlto539.asp?indexpage=2&orderby=new'
-url[3, 2] = 'http://www.lotto-8.com/listltodof.asp?indexpage=2&orderby=new'
-url[4, 2] = 'http://www.lotto-8.com/listlto.asp?indexpage=2&orderby=new'
-
-num = c(49, 39, 40, 38)
-l = c(6, 5, 7, 6)
-
-A = final(1)
-B = final(2)
-C = final(3)
-D = final(4)
-
-D1 = final_s(4)
-
-write.csv(A, "¤j¼Ö³zªñ200´Á¬ÛÃö²Î­p¸ê°T_¤@¯ë¸¹½X.csv")
-write.csv(B, "¤µ±mªñ200´Á¬ÛÃö²Î­p¸ê°T_¤@¯ë¸¹½X.csv")
-write.csv(C, "¤jºÖ±mªñ200´Á¬ÛÃö²Î­p¸ê°T_¤@¯ë¸¹½X.csv")
-write.csv(D, "«Â¤O±mªñ200´Á¬ÛÃö²Î­p¸ê°T_¤@¯ë¸¹½X.csv")
-
-write.csv(D1, "«Â¤O±mªñ200´Á¬ÛÃö²Î­p¸ê°T_¯S§O¸¹½X.csv")
+} 
 
