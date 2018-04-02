@@ -66,17 +66,3 @@ def process(url, j, num):
     analysis = pd.DataFrame(doc)
     return analysis
 
-url0 = ['http://www.lotto-8.com/listltobig.asp', 'http://www.lotto-8.com/listltobig.asp?indexpage=2&orderby=new'] ## 大樂透
-url1 = ['http://www.lotto-8.com/listlto539.asp', 'http://www.lotto-8.com/listlto539.asp?indexpage=2&orderby=new'] ## 今彩
-url2 = ['http://www.lotto-8.com/listltodof.asp', 'http://www.lotto-8.com/listltodof.asp?indexpage=2&orderby=new'] ## 大福彩
-url3 = ['http://www.lotto-8.com/listlto.asp', 'http://www.lotto-8.com/listlto.asp?indexpage=2&orderby=new'] ## 威力彩
-num = [49, 39, 40, 38]
-
-
-
-process(url0, j = 1, num = num[0])
-process(url1, j = 1, num = num[1])
-process(url2, j = 1, num = num[2])
-process(url3, j = 1, num = num[3])
-process(url3, j = 2, num = 8)
-
