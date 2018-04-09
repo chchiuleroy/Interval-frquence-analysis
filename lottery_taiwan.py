@@ -36,11 +36,11 @@ def obtain(url, j):
 
 def seq(z, j):
     s1 = 1; s2 = 0; g = {}
-    for i in range(len(z)):
+    for i in range(len(z)-1, -1, -1):
         if z[i] == j:
             g[s1] = s2 + 1 ; s2 = s2 + 1
         else:
-            s2 = 0; s1 +=1
+            s2 = 0; s1 =s1 + 1
     return list(g.values())
 
 def count(u, num):
@@ -51,13 +51,14 @@ def count(u, num):
 def process(url, j, num):
     set0 = np.append(obtain(url[0], j), obtain(url[1], j), axis = 0)
     y = num
-    count_set = [count(set0[i], y) for i in range(y)]
-    int0 = [seq(count_set[i], 0) for i in range(y)]
-    int1 = [seq(count_set[i], 1) for i in range(y)]
+    l = np.shape(set0)[0]
+    count_set = np.array([count(set0[i], y) for i in range(l)])
+    int0 = [seq(count_set[:, i], 0) for i in range(y)]
+    int1 = [seq(count_set[:, i], 1) for i in range(y)]
     max0 = [np.array(int0[i]).max() for i in range(y)]
     max1 = [np.array(int1[i]).max() for i in range(y)]
     mean0 = [np.array(int0[i]).mean().round() for i in range(y)]
-    last_show = np.array([int0[i][-1] for i in range(y)]); last_show[list(set0[-1] - 1)] = 0
+    last_show = np.array([int0[i][-1] for i in range(y)]); last_show[list(set0[0]-1)] = 0
     next_show = mean0 - last_show
     prob = [poisson.cdf(last_show[i], mean0[i]) for i in range(y)]
     num_s = range(1, y+1)
