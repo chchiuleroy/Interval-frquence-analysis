@@ -22,7 +22,7 @@ data = function(url, l, j) {
 
 sqe = function(z, p) { s1 = 1; s2 = 0; g = {}
   
-  for (i in 1 : length(z)) {
+  for (i in rev(1 : length(z))) {
     
     if (z[i] == p) {g[s1] = s2 + 1; s2 = s2 + 1} else {s2 = 0; s1 = s1 + 1}
     
@@ -80,3 +80,5 @@ write.csv(B, "今彩近200期相關統計資訊_一般號碼.csv")
 write.csv(C, "大福彩近200期相關統計資訊_一般號碼.csv")
 write.csv(D, "威力彩近200期相關統計資訊_一般號碼.csv")
 write.csv(E, "威力彩近200期相關統計資訊_特別號碼.csv")
+
+
